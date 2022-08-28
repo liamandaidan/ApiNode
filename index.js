@@ -3,6 +3,7 @@ var path = require('path');
 const bodyParser = require('body-parser');
 //file imports
 const loginRouter = require('./api/login');
+const {main, listDatabases} = require('./api/database');
 
 const PORT = 4001;
 const app = express();
@@ -15,6 +16,7 @@ app.get('/', (req, res, next) => {
     res.sendFile('index.html', { root: path.join(__dirname) });
 })
 
+main().catch(console.error);
 
 app.listen(PORT, () => {
     console.log(`Server started on port: ${PORT}`);
