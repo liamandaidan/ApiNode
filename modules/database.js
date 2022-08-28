@@ -6,7 +6,12 @@ async function main() {
     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
     * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
     */
-    const uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.gswh57a.mongodb.net/?retryWrites=true&w=majority";
+    //later will use a .env but for the moment i dont mind showing locally
+    const USERNAME = 'm001-student';
+    const PASS =  'm001-mongodb-basics';
+    const DB = '';
+
+    const uri = `mongodb+srv://${USERNAME}:${PASS}@sandbox.gswh57a.mongodb.net/${DB}?retryWrites=true&w=majority`;
      /**
      * The Mongo Client you will use to interact with your database
      * See https://mongodb.github.io/node-mongodb-native/3.6/api/MongoClient.html for more details
@@ -14,7 +19,7 @@ async function main() {
      * pass option { useUnifiedTopology: true } to the MongoClient constructor.
      * const client =  new MongoClient(uri, {useUnifiedTopology: true})
      */
-      const client = new MongoClient(uri);
+      const client = new MongoClient(uri, { useUnifiedTopology: true });
 
       try {
           // Connect to the MongoDB cluster
