@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Note = require('../models/note');
 const router = require('express').Router({ mergeParams: true });
-
+/**
+ * Main function woot
+ */
 async function main() {
     /**
     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
@@ -9,7 +11,7 @@ async function main() {
     */
     //later will use a .env but for the moment i dont mind showing locally
     const USERNAME = 'm001-student';
-    const PASS = 'm001-mongodb-basics';
+    const PASS = 'm001-password';
     const DB = 'note-test';
 
     const uri = `mongodb+srv://${USERNAME}:${PASS}@sandbox.gswh57a.mongodb.net/${DB}?retryWrites=true&w=majority`;
