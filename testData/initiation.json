@@ -1,0 +1,17 @@
+{
+    "name": "generic event",
+    "desc": "This is a very cool event!",
+    "location": {
+        "streetAddress": "1234 St NE",
+        "cityName": "ExampleCity",
+        "provName": "BC",
+        "postalCode": "T4H 6I8"
+    },
+    "programType": "Online",
+    "details": "Cool event",
+    "topic": [
+        "party",
+        "event",
+        "generic"
+    ]
+}
