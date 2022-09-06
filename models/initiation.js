@@ -10,12 +10,6 @@
 const mongoose = require('mongoose');
 //define the structure of our db
 const Schema = mongoose.Schema;
-//describe structure of  our collection
-/**
- * Address schema import
- * @see module:/models/address
- */
-const addressSchema = require('./address');
 
 
 const intiationSchema = new Schema({
@@ -28,7 +22,12 @@ const intiationSchema = new Schema({
         required: [true, 'Please provide general description'],
     },
     location: {
-        type: {type: Schema.ObjectId, ref: 'addresses'}
+        googleLocationCoordinates: { type: String },
+        postalCode: { type: String },
+        street: { type: String },
+        city: { type: String },
+        state: { type: String },
+        country: { type: String },
     },
     programType: {
         type: String,
